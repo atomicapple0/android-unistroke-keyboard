@@ -30,7 +30,7 @@ class MotionTrack
     public double trackPosition()
     {
         VectorF pos = position();
-        mTrackDistance += pos.sub(basePosition()).fastLength();
+        mTrackDistance += pos.sub(mBasePosition).fastLength();
         mBasePosition = pos;
         return mTrackDistance;
     }
@@ -68,7 +68,7 @@ class MotionTrack
 
     public VectorF difference()
     {
-        return position().sub(basePosition());
+        return position().sub(mBasePosition);
     }
 }
 
